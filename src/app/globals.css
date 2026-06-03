@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fc-red: #ED1B24;
+  --color-fc-red-dark: #C4121A;
+  --color-fc-red-light: #FF4D55;
+  --color-fc-white: #FFFFFF;
+  --color-fc-cream: #FFF8F5;
+  --color-fc-dark: #1A1A1A;
+  --color-fc-dark-soft: #2A2A2A;
+  --color-fc-gray: #6B7280;
+  --color-fc-gray-light: #F3F4F6;
+  --color-fc-accent: #FFD700;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  @apply bg-fc-dark text-white antialiased;
+  font-family: var(--font-sans);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1A1A1A; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #ED1B24; }
+
+@layer components {
+  .card {
+    @apply bg-fc-dark-soft rounded-2xl overflow-hidden border border-white/5
+           hover:border-fc-red/30 transition-all duration-300
+           hover:shadow-lg hover:shadow-fc-red/5;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold
+           bg-fc-red/15 text-fc-red border border-fc-red/20;
+  }
+  .badge-source {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-medium
+           bg-white/5 text-fc-gray border border-white/10;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3
+           font-semibold text-white transition-all duration-200
+           bg-fc-red hover:bg-fc-red-dark active:scale-95;
+  }
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold tracking-tight;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-fc-red via-fc-red-light to-fc-accent
+           bg-clip-text text-transparent;
+  }
+}
+
+.prose {
+  @apply text-white/85 leading-relaxed;
+}
+.prose p { @apply mb-4; }
+.prose h2 { @apply text-xl font-bold mt-8 mb-3 text-white; }
+.prose h3 { @apply text-lg font-semibold mt-6 mb-2 text-white/90; }
+.prose a { @apply text-fc-red hover:text-fc-red-light underline underline-offset-4; }
+.prose ul { @apply list-disc pl-5 mb-4 space-y-1; }
+.prose ol { @apply list-decimal pl-5 mb-4 space-y-1; }
+.prose blockquote {
+  @apply border-l-4 border-fc-red/50 pl-4 my-4 italic text-white/70;
+}
+.prose strong { @apply text-white font-semibold; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
