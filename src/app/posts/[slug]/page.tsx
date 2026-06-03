@@ -51,10 +51,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           ))}
         </div>
       )}
-      <div className="mt-8 p-4 bg-fc-dark-soft rounded-xl border border-white/5 text-xs text-fc-gray">
-        <strong className="text-white/70">Hinweis:</strong> Dieser Artikel wurde automatisch aggregiert und von KI zusammengefasst.
-        Für den vollständigen Artikel besuche bitte die{' '}
-        <a href={post.sourceUrl} target="_blank" rel="noopener" className="text-fc-red">Original-Quelle</a>.
+      <div className="mt-8 p-4 bg-fc-dark-soft rounded-xl border border-white/5 text-xs text-fc-gray leading-relaxed">
+        <strong className="text-white/70">Quelle:</strong>{' '}
+        <a href={post.sourceUrl} target="_blank" rel="noopener" className="text-fc-red">
+          {post.source}
+        </a>
+        {post.sourceUrl !== '#' && (
+          <> – dieser Artikel basiert auf einer Meldung der Originalquelle. Für den vollständigen Bericht besuche bitte die verlinkte Seite.</>
+        )}
       </div>
     </article>
   );
@@ -67,14 +71,14 @@ function renderMarkdown(md: string): string {
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="rounded-xl my-4" />')
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" className="rounded-xl my-4" />')
     .replace(/^- (.+)$/gm, '<li>$1</li>')
     .replace(/^\d+\. (.+)$/gm, '<li>$2</li>')
     .replace(/\n\n/g, '</p><p>')
-    .replace(/^---$/gm, '<hr class="my-8 border-white/10" />')
+    .replace(/^---$/gm, '<hr className="my-8 border-white/10" />')
     .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
   html = '<p>' + html + '</p>';
   html = html.replace(/<p>\s*<\/p>/g, '');
-  html = html.replace(/(<li>.*?<\/li>)+/g, '<ul class="list-disc pl-5 mb-4 space-y-1">$&</ul>');
+  html = html.replace(/(<li>.*?<\/li>)+/g, '<ul className="list-disc pl-5 mb-4 space-y-1">$&</ul>');
   return html;
 }

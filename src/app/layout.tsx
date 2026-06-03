@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Effzeh News – 1. FC Köln Nachrichten',
-  description: 'Automatisierte Nachrichten rund um den 1. FC Köln',
+  description: 'Aktuelle Nachrichten, Spielberichte und Analysen rund um den 1. FC Köln. Unabhängig, schnell, fundiert.',
 };
 
 export default function RootLayout({
@@ -31,11 +31,7 @@ export default function RootLayout({
               </div>
             </a>
             <div className="flex items-center gap-2 text-xs text-fc-gray">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fc-red opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-fc-red"></span>
-              </span>
-              Auto-Updates aktiv
+              <span className="font-semibold tracking-wide">#EFFZEH</span>
             </div>
           </div>
         </header>
@@ -46,7 +42,7 @@ export default function RootLayout({
               <div className="flex items-center gap-2">
                 <span className="text-fc-red font-bold">Effzeh News</span>
                 <span>·</span>
-                <span>Automatisiert mit ❤️ für den 1. FC Köln</span>
+                <span>Unabhängige Berichterstattung rund um den 1. FC Köln</span>
               </div>
               <div className="flex items-center gap-6">
                 <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>

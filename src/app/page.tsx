@@ -10,12 +10,8 @@ export default function HomePage() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <section className="mb-12 text-center py-8">
         <div className="inline-flex items-center gap-2 mb-4">
-          <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fc-red opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-fc-red"></span>
-          </span>
           <span className="text-sm text-fc-gray uppercase tracking-widest">
-            Alle 4 Stunden aktualisiert
+            Unabhängige FC-Berichterstattung
           </span>
         </div>
         <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4">
@@ -24,18 +20,22 @@ export default function HomePage() {
           <span className="text-white">News & Analysen</span>
         </h1>
         <p className="text-fc-gray max-w-2xl mx-auto text-lg">
-          Automatisch kuratierte Nachrichten aus 9 Quellen –
-          von FC.de über Geißblog bis Kicker. Immer aktuell, immer informiert.
+          Aktuelle Nachrichten, Spielberichte und Hintergründe rund um den 1. FC Köln –
+          kuratiert aus den wichtigsten Quellen der FC-Medienlandschaft.
         </p>
-        <div className="flex flex-wrap justify-center gap-2 mt-6">
-          {['FC.de', 'Geißblog', 'Come-On-FC', 'Geißbockecho', 'Effzeh.com',
-            'Transfermarkt', 'Express', 'KSTA', 'Kicker'].map((src) => (
-            <span key={src} className="badge-source text-[11px] py-1 px-3">
-              {src}
-            </span>
-          ))}
-        </div>
       </section>
+
+      <div className="flex items-center gap-6 mb-8 py-3 px-5 bg-fc-dark-soft rounded-xl border border-white/5">
+        <div className="flex items-center gap-2">
+          <span className="text-fc-red font-bold text-lg">{posts.length}</span>
+          <span className="text-fc-gray text-sm">Artikel</span>
+        </div>
+        <div className="w-px h-4 bg-white/10"></div>
+        <div className="flex items-center gap-2">
+          <span className="text-white font-semibold">FC-News</span>
+          <span className="text-fc-gray text-sm">· Redaktion</span>
+        </div>
+      </div>
 
       {posts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -48,10 +48,10 @@ export default function HomePage() {
       ) : (
         <div className="text-center py-20">
           <div className="text-6xl mb-4">🐐</div>
-          <h2 className="text-2xl font-bold text-white mb-2">Noch keine Artikel</h2>
+          <h2 className="text-2xl font-bold text-white mb-2">Bald geht's los!</h2>
           <p className="text-fc-gray max-w-md mx-auto">
-            Der automatisierte News-Aggregator scannt alle 4 Stunden die Quellen.
-            Die ersten Artikel erscheinen in Kürze!
+            Unsere Redaktion bereitet die ersten Artikel vor.
+            Schau bald wieder vorbei!
           </p>
         </div>
       )}
