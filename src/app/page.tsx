@@ -1,8 +1,6 @@
 import { getAllPosts } from '@/lib/posts';
 import NewsCard from '@/components/NewsCard';
 
-export const dynamic = 'force-static';
-
 export default function HomePage() {
   const posts = getAllPosts();
 
