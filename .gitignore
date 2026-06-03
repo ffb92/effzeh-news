@@ -1,0 +1,5 @@
+node_modules/
+.next/
+out/
+feeds.db
+*.tar.gz
