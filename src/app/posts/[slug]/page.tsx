@@ -38,9 +38,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           )}
         </div>
       </header>
-      {post.image && (
+      {post.image ? (
         <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-8 bg-fc-dark-soft">
           <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+        </div>
+      ) : (
+        <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-8 relative">
+          <img src="/images/card-default.png" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-fc-dark/80 via-transparent to-transparent" />
         </div>
       )}
       <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }} />
