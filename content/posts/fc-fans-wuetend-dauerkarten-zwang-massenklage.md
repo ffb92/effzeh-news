@@ -1,5 +1,5 @@
 ---
-title: "„Respektlos": FC-Fans wütend über Dauerkarten-Regelung – droht Massenklage?"
+title: '„Respektlos": FC-Fans wütend über Dauerkarten-Regelung – droht Massenklage?'
 date: "2026-06-04T12:30:00+02:00"
 source: "Express"
 sourceUrl: "https://www.express.de/sport/fussball/1-fc-koeln/fc-fans-wuetend-auf-klub-droht-jetzt-eine-massenklage-1293487"
