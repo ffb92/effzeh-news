@@ -4,6 +4,17 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Effzeh News – 1. FC Köln Nachrichten',
   description: 'Aktuelle Nachrichten, Spielberichte und Analysen rund um den 1. FC Köln. Unabhängig, schnell, fundiert.',
+  openGraph: {
+    title: 'Effzeh News – 1. FC Köln Nachrichten',
+    description: 'Aktuelle Nachrichten, Spielberichte und Analysen rund um den 1. FC Köln.',
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Effzeh News – 1. FC Köln Nachrichten',
+    description: 'Aktuelle Nachrichten, Spielberichte und Analysen rund um den 1. FC Köln.',
+    images: ['/images/og-image.png'],
+  },
 };
 
 export default function RootLayout({

@@ -17,12 +17,8 @@ export default function NewsCard({ post }: { post: PostMeta }) {
           <img src={post.image} alt={post.title}
                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-5xl font-black text-fc-red/30 group-hover:text-fc-red/50 transition-colors">FC</div>
-              <div className="text-xs text-fc-gray mt-1">Effzeh News</div>
-            </div>
-          </div>
+          <img src="/images/card-default.png" alt=""
+               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         )}
         <div className="absolute top-3 left-3">
           <span className={`inline-flex px-2.5 py-0.5 rounded-full text-[10px] font-semibold border

@@ -6,7 +6,15 @@ export default function HomePage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <section className="mb-12 text-center py-8">
+      <section className="mb-12 text-center py-16 relative overflow-hidden rounded-3xl">
+        {/* Hero background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+          style={{ backgroundImage: 'url(/images/hero-bg.png)' }}
+        />
+        {/* Overlay gradient for readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-fc-dark via-fc-dark/60 to-transparent" />
+        <div className="relative z-10">
         <div className="inline-flex items-center gap-2 mb-4">
           <span className="text-sm text-fc-gray uppercase tracking-widest">
             Unabhängige FC-Berichterstattung
@@ -21,6 +29,7 @@ export default function HomePage() {
           Aktuelle Nachrichten, Spielberichte und Hintergründe rund um den 1. FC Köln –
           kuratiert aus den wichtigsten Quellen der FC-Medienlandschaft.
         </p>
+        </div>
       </section>
 
       <div className="flex items-center gap-6 mb-8 py-3 px-5 bg-fc-dark-soft rounded-xl border border-white/5">
@@ -45,7 +54,9 @@ export default function HomePage() {
         </div>
       ) : (
         <div className="text-center py-20">
-          <div className="text-6xl mb-4">🐐</div>
+          <div className="w-full max-w-md mx-auto mb-6 rounded-2xl overflow-hidden">
+            <img src="/images/card-default.png" alt="" className="w-full opacity-60" />
+          </div>
           <h2 className="text-2xl font-bold text-white mb-2">Bald geht's los!</h2>
           <p className="text-fc-gray max-w-md mx-auto">
             Unsere Redaktion bereitet die ersten Artikel vor.
